@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page import="fr.gtm.projetproxibanquev2.dao.VirementDAO"%>
+<%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +22,8 @@
 			<%@ include file="header.jsp"%>
 
 			<div class="row">
-
+			
+	
 				<section>
 					<table  class="table table-striped table-dark">
 						<tr>
