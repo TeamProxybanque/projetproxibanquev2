@@ -55,6 +55,7 @@ legend{
 }
 
 footer {
+  position:relative;
   bottom: 0;
   text-align:center;
   font-family: 'Sunflower', sans-serif;

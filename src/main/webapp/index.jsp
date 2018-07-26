@@ -21,11 +21,11 @@
   				</div>
 			</header>
       		<div class="row">
-				<form class="col-lg-4 align-self-center col-lg-offset-4" action="servletLogIn.jsp" method="post">
+				<form class="col-lg-4 align-self-center col-lg-offset-4" action="servletLogIn" method="post">
   					<legend>Identification</legend>
     				<div class="form-group">
       					<label for="texte">LogIn : </label>
-      					<input id="text" type="text" class="form-control">
+      					<input id="text" type="text" name="login" class="form-control">
     				</div>
     				<div class="form-group">
      					<label for="texte">Password : </label>
