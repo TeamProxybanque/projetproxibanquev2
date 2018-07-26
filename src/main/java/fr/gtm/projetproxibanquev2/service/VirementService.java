@@ -36,8 +36,8 @@ public class VirementService implements IVirementService {
 
 	@Override
 	public ArrayList<Virement> recupererListeAllVirement() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return virementDAO.getAllVirement();
 	}
 
 }

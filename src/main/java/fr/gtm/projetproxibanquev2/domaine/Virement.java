@@ -1,11 +1,11 @@
 package fr.gtm.projetproxibanquev2.domaine;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Virement {
 	
 	private int id;
-	private Date dateVirement;
+	private LocalDate dateVirement;
 	private String numeroCompteDebiteur;
 	private String numeroCompteCrediteur;
 	private double montant;
@@ -25,11 +25,11 @@ public class Virement {
 		this.id = id;
 	}
 
-	public Date getDateVirement() {
+	public LocalDate getDateVirement() {
 		return dateVirement;
 	}
 
-	public void setDateVirement(Date dateVirement) {
+	public void setDateVirement(LocalDate dateVirement) {
 		this.dateVirement = dateVirement;
 	}
 
@@ -57,7 +57,7 @@ public class Virement {
 		this.montant = montant;
 	}
 
-	public Virement(int id, Date dateVirement, String numeroCompteDebiteur, String numeroCompteCrediteur,
+	public Virement(int id, LocalDate dateVirement, String numeroCompteDebiteur, String numeroCompteCrediteur,
 			double montant) {
 		super();
 		this.id = id;
@@ -67,7 +67,7 @@ public class Virement {
 		this.montant = montant;
 	}
 
-	public Virement(Date dateVirement, String numeroCompteDebiteur, String numeroCompteCrediteur, double montant) {
+	public Virement(LocalDate dateVirement, String numeroCompteDebiteur, String numeroCompteCrediteur, double montant) {
 		super();
 		this.dateVirement = dateVirement;
 		this.numeroCompteDebiteur = numeroCompteDebiteur;
