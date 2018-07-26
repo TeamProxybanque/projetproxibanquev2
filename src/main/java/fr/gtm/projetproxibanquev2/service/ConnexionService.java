@@ -29,6 +29,7 @@ public class ConnexionService {
 		// recuperer l'arraylist de gerant
 		GerantDAO gerantDao = new GerantDAO();
 		ArrayList<Gerant> gerants = gerantDao.getAllGerant();
+		Gerant gerantTrouve = null;
 		
 		// debut du foreach sur l'arraylist de gerant
 		for (Gerant gerant : gerants) {
@@ -38,11 +39,11 @@ public class ConnexionService {
 				
 				// si login correspond, comparer le password
 				if ( password.equals(gerant.getPassword()) ) {
-					return gerant;
+					gerantTrouve = gerant;
 				}
 			}
 		}
-		return null;
+		return gerantTrouve;
 	}
 	
 	/** 
@@ -51,11 +52,12 @@ public class ConnexionService {
 	 * @return null si pas de conseiller trouve, objet Conseiller si trouve
 	 */
 	public Conseiller verifSiConseiller(String login, String password) {
-		
+				
 		// recuperer l'arraylist de conseillers
 		ConseillerDAO conseillerDao = new ConseillerDAO();
 		ArrayList<Conseiller> conseillers = conseillerDao.getAllConseiller();
-		
+		Conseiller conseillerTrouve = null;
+				
 		// debut du foreach sur l'arraylist de conseillers
 		for (Conseiller conseiller : conseillers) {
 				
@@ -64,11 +66,11 @@ public class ConnexionService {
 				
 				// si login correspond, comparer le password
 				if ( password.equals(conseiller.getPassword()) ) {
-					return conseiller;
+					conseillerTrouve = conseiller;
 				}
 			}
 		}
-		return null;
+		return conseillerTrouve;
 	}
 	
 }
