@@ -7,6 +7,7 @@
   <!-- On fait appel au fichiers CSS et Bootstrap-->
     <link href="Bootstrap/css/bootstrap.css" rel="stylesheet"/>
     <link href="CSS/styleErreur.css" rel="stylesheet"/>
+    <link href="CSS/charteGraphique.css" rel="stylesheet"/>
 
   </head>
   
