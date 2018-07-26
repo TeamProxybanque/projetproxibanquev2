@@ -2,11 +2,11 @@ package fr.gtm.projetproxibanquev2.domaine;
 
 public abstract class Utilisateur {
 	
-	private int id;
-	private String nom;
-	private String prenom;
-	private String login;
-	private String password;
+	protected int id;
+	protected String nom;
+	protected String prenom;
+	protected String login;
+	protected String password;
 	
 	
 	@Override

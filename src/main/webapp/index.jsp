@@ -7,6 +7,7 @@
   <!-- On fait appel au fichiers CSS et Bootstrap-->
     <link href="Bootstrap/css/bootstrap.css" rel="stylesheet"/>
     <link href="CSS/styleIndex.css" rel="stylesheet"/>
+    <link href="CSS/charteGraphique.css" rel="stylesheet"/>
   <!-- On fait appel au fichiers JavaScript -->
     <script type="text/javascript" src="JavaScript/indexJavaScript.js"></script>
   </head>
@@ -31,7 +32,7 @@
      					<input id="password" type="password" name="password" class="form-control" maxlength="10">
     				</div>
     				<div class="form-group">
-    					<input type="submit" value="Submit">
+    					<input type="submit" value="Submit" class="btn btn-info">
     				</div>
 				</form>
 			</div>
