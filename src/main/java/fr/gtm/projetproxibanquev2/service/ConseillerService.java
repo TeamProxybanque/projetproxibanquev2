@@ -2,12 +2,20 @@ package fr.gtm.projetproxibanquev2.service;
 
 import java.util.ArrayList;
 
+import fr.gtm.projetproxibanquev2.dao.ClientDAO;
+import fr.gtm.projetproxibanquev2.dao.CompteCourantDAO;
+import fr.gtm.projetproxibanquev2.dao.CompteEpargneDAO;
 import fr.gtm.projetproxibanquev2.dao.ConseillerDAO;
+import fr.gtm.projetproxibanquev2.domaine.Client;
+import fr.gtm.projetproxibanquev2.domaine.Compte;
 import fr.gtm.projetproxibanquev2.domaine.Conseiller;
 
 public class ConseillerService implements IConseillerService {
 	
 	ConseillerDAO conseillerDAO = new ConseillerDAO();
+	ClientDAO clientDAO = new ClientDAO();
+	CompteCourantDAO ccDAO = new CompteCourantDAO();
+	CompteEpargneDAO ceDAO = new CompteEpargneDAO();
 
 	@Override
 	public void creerConseiller(Conseiller conseiller) {
@@ -37,6 +45,37 @@ public class ConseillerService implements IConseillerService {
 	public ArrayList<Conseiller> recupererListeAllConseiller() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	public boolean mettreAJourClient(Client client) {
+		
+		boolean mettreAJour = false;
+		
+		if (client.getId() == client.getConseiller().getId()) 
+		{
+			clientDAO.updateClient(client);
+			mettreAJour = true;
+		}
+		
+		
+		return mettreAJour;
+		
+	}
+	
+	public ArrayList<Client> recupererListeClients() {
+		
+		
+		return clientDAO.getAllClient();
+	}
+	
+	public ArrayList<Compte> listerCompteClient (Client client) {
+		// to be finished
+		ArrayList<Compte> list = null;
+		list.addAll(ccDAO.getAllCompteCourant());
+		list.addAll(ceDAO.getAllCompteEpargne());
+		
+		return list;
+		
 	}
 
 }
