@@ -8,6 +8,8 @@ import fr.gtm.projetproxibanquev2.dao.CompteEpargneDAO;
 import fr.gtm.projetproxibanquev2.dao.ConseillerDAO;
 import fr.gtm.projetproxibanquev2.domaine.Client;
 import fr.gtm.projetproxibanquev2.domaine.Compte;
+import fr.gtm.projetproxibanquev2.domaine.CompteCourant;
+import fr.gtm.projetproxibanquev2.domaine.CompteEpargne;
 import fr.gtm.projetproxibanquev2.domaine.Conseiller;
 
 public class ConseillerService implements IConseillerService {
@@ -68,13 +70,10 @@ public class ConseillerService implements IConseillerService {
 		return clientDAO.getAllClient();
 	}
 	
-	public ArrayList<Compte> listerCompteClient (Client client) {
-		// to be finished
-		ArrayList<Compte> list = null;
-		list.addAll(ccDAO.getAllCompteCourant());
-		list.addAll(ceDAO.getAllCompteEpargne());
-		
-		return list;
+	public void listerCompteClient (Client client) {
+		// Attention! Avec ArrayList - ne pas possible. Changer UML diagramme de class
+		System.out.println(ccDAO.getCompteCourantById(client.getCompteCourant().getId()));
+		System.out.println(ceDAO.getCompteEpargneById(client.getCompteEpargne().getId()));
 		
 	}
 
