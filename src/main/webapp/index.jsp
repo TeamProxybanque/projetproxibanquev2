@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- On fait appel au fichiers CSS et Bootstrap-->
     <link href="Bootstrap/css/bootstrap.css" rel="stylesheet"/>
-    <link href="CSS/styleIndex.css" rel="stylesheet"/>
     <link href="CSS/charteGraphique.css" rel="stylesheet"/>
+    <link href="CSS/styleIndex.css" rel="stylesheet"/>
   <!-- On fait appel au fichiers JavaScript -->
     <script type="text/javascript" src="JavaScript/indexJavaScript.js"></script>
   </head>
@@ -35,7 +35,7 @@
     					<input type="submit" value="Submit" class="btn btn-info">
     				</div>
 				</form>
-			</div>
+			</div><br><br>
 			<%@ include file="footer.jsp" %>
 		</div>
     </div>

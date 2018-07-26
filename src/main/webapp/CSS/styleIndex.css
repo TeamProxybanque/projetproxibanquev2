@@ -11,3 +11,9 @@ body {
   align-items: center;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  text-align:center;
+}
+
