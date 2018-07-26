@@ -24,26 +24,31 @@
 				<section>
 					<table  class="table table-striped table-dark">
 						<tr>
+							<th>Date</th>
 							<th>Compte débité</th>
 							<th>Compte crédité</th>
 							<th>Montant</th>
 						</tr>
 						<tr>
+							<td>22/06/2018</td>
 							<td>11111A</td>
 							<td>67890A</td>
 							<td>450</td>
 						</tr>
 						<tr>
+							<td>10/07/2018</td>
 							<td>22222A</td>
 							<td>33333A</td>
 							<td>10000</td>
 						</tr>
 						<tr>
+							<td>17/07/2018</td>
 							<td>55555A</td>
 							<td>66666A</td>
 							<td>200</td>
 						</tr>
 						<tr>
+							<td>21/07/2018</td>
 							<td>12345A</td>
 							<td>66666A</td>
 							<td>3000</td>
