@@ -5,10 +5,12 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <!-- On fait appel au fichiers CSS et Bootstrap-->
+    <link href="Bootstrap/css/bootstrap.css" rel="stylesheet"/>
     <title>Liste des clients du conseiller</title>
   </head>
   <body>
-    <!--inclure le header-->
+    <%@ include file="header.jsp" %>
     <h1>Liste de vos clients : </h1>
     <table>
       <thead>
@@ -54,6 +56,6 @@
 
 
 
-    <!-- inclure le footer-->
+    <%@ include file="footer.jsp" %>
   </body>
 </html>
