@@ -24,6 +24,12 @@ public class Conseiller extends Utilisateur {
 	public void setListeClientsConseiller(ArrayList<Client> listeClientsConseiller) {
 		this.listeClientsConseiller = listeClientsConseiller;
 	}
+
+	public Conseiller(int id, String nom, String prenom, String login, String password,
+			ArrayList<Client> listeClientsConseiller) {
+		super(id, nom, prenom, login, password);
+		this.listeClientsConseiller = listeClientsConseiller;
+	}
 	
 	
 

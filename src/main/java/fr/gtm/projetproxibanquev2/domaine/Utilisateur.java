@@ -30,6 +30,15 @@ public abstract class Utilisateur {
 	}
 
 
+	public Utilisateur(String nom, String prenom, String login, String password) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.login = login;
+		this.password = password;
+	}
+
+
 	public int getId() {
 		return id;
 	}

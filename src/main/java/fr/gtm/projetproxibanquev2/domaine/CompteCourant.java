@@ -8,6 +8,15 @@ public class CompteCourant extends Compte {
 		super(id, numeroDeCompte, solde);
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+
+	public CompteCourant(int id, String numeroDeCompte, double solde, Client client) {
+		super(id, numeroDeCompte, solde);
+		this.client = client;
+	}
+
+
 
 	public CompteCourant() {
 		// TODO Auto-generated constructor stub

@@ -25,6 +25,13 @@ public abstract class Compte {
 	}
 
 
+	public Compte(String numeroDeCompte, double solde) {
+		super();
+		this.numeroDeCompte = numeroDeCompte;
+		this.solde = solde;
+	}
+
+
 	public int getId() {
 		return id;
 	}

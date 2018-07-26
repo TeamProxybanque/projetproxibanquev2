@@ -19,6 +19,33 @@ public class Client {
 	}
 
 
+	public Client(int id, String nom, String prenom, String email, String adresse, Conseiller conseiller,
+			CompteCourant compteCourant, CompteEpargne compteEpargne) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.adresse = adresse;
+		this.conseiller = conseiller;
+		this.compteCourant = compteCourant;
+		this.compteEpargne = compteEpargne;
+	}
+
+
+	public Client(String nom, String prenom, String email, String adresse, Conseiller conseiller,
+			CompteCourant compteCourant, CompteEpargne compteEpargne) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.adresse = adresse;
+		this.conseiller = conseiller;
+		this.compteCourant = compteCourant;
+		this.compteEpargne = compteEpargne;
+	}
+
+
 	public Client(int id, String nom, String prenom, String email, String adresse) {
 		super();
 		this.id = id;
