@@ -67,6 +67,7 @@ public class LoginServlet extends HttpServlet {
 			// recuperer liste client (temporaire)
 			ConseillerService conseillerService = new ConseillerService();
 			ArrayList<Client> clients = conseillerService.recupererListeClients();
+			System.out.println(clients);
 			maSession.setAttribute("listeClients", clients);
 			// dispatcher
 			dispatcher = request.getRequestDispatcher("listeClients.jsp");

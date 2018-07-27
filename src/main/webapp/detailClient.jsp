@@ -23,13 +23,13 @@
 							<fieldset class="form-group">
 								<legend>Informations personnelles</legend>
 								<Label>Nom : </Label>
-								<Label>-NOM DU CLIENT-</Label><br>
+								<Label>-Cadart-</Label><br>
 								<Label>Prénom : </Label>
-								<Label>-PRENOM DU CLIENT-</Label><br>
+								<Label>-Romain-</Label><br>
 								<Label>Email : </Label>
-								<Label>-EMAIL DU CLIENT-</Label><br>
+								<Label>-cadart.romain@gmail.com-</Label><br>
 								<Label>Adresse : </Label>
-								<Label>-ADRESSE DU CLIENT-</Label><br><br>	
+								<Label>-50 rue des freres lumieres-</Label><br><br>	
 					
 								<button type="submit" class="btn btn-info">Modifier les données</button>	
 							</fieldset>
