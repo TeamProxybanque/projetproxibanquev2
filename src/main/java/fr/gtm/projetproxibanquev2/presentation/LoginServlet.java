@@ -58,9 +58,9 @@ public class LoginServlet extends HttpServlet {
 			System.out.println(gerant);
 			maSession.setAttribute("gerant", gerant);
 			dispatcher = request.getRequestDispatcher("listeVirements");
+
 			// recuperer liste virement 
-		
-		// si login/password correspond a conseiller	
+
 		} else if ( conseiller != null ) {
 			System.out.println(conseiller);
 			maSession.setAttribute("conseiller", conseiller);

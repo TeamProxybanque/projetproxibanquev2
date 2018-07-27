@@ -43,6 +43,7 @@ public class ConnexionService {
 				}
 			}
 		}
+		System.out.println(gerantTrouve);
 		return gerantTrouve;
 	}
 	
