@@ -43,9 +43,9 @@
   							<tr>
     							<td>${client.getNom()}</td>
     							<td>${client.getPrenom()}</td>
-    							<td>${client.getCompteCourant()}</td>
+    							<td>${client.getCompteCourant().getNumeroDeCompte()}</td>
     							<td>${client.getCompteCourant().getSolde()}</td>
-    							<td>${client.getCompteEpargne()}</td>
+    							<td>${client.getCompteEpargne().getNumeroDeCompte()}</td>
     							<td>${client.getCompteEpargne().getSolde()}</td>
     							<td><a href=detailClient.jsp>Voir plus</a></td>
   							</tr>

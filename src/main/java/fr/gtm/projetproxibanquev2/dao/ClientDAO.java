@@ -87,18 +87,20 @@ public class ClientDAO implements IClientDAO {
 			
 			ResultSet rs = stmt.executeQuery("SELECT * FROM client;");
 			
-			Client clientEncours = new Client();
+			
 			
 			ArrayList<Client> listeClient = new ArrayList<Client>();
 			
 			while(rs.next())
 			{
+				Client clientEncours = new Client();
 				//Le client prend chaque données de la réponse : 
 				clientEncours.setId(rs.getInt("id"));
 				clientEncours.setNom(rs.getString("nom"));
 				clientEncours.setPrenom(rs.getString("prenom"));
 				clientEncours.setEmail(rs.getString("email"));
 				clientEncours.setAdresse(rs.getString("adresse"));
+				//on récupère les comptes associés au clientEncours
 				clientEncours.setCompteCourant(new CompteCourantDAO().getCompteCourantByClientId(clientEncours.getId()));
 				clientEncours.setCompteEpargne(new CompteEpargneDAO().getCompteEpargneByClientId(clientEncours.getId()));				
 				
