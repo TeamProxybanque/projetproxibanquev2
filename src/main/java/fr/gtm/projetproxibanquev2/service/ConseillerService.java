@@ -67,16 +67,23 @@ public class ConseillerService implements IConseillerService {
 		return mettreAJour;
 		
 	}
-	
+	/**
+	 * Méthode permettant à une entité Conseiller de récupérer la liste des clients
+	 * @return
+	 */
 	public ArrayList<Client> recupererListeClients() {
 		// TODO Tous cliens de BD 
 		
 		return clientDAO.getAllClient();
 	}
 	
+	/**
+	 * Methode permettant à une entité Conseiller de récupérer la liste des comptes associé à un client
+	 * @param client
+	 */
 	public void listerCompteClient (Client client) {
 		// TODO 2 comptes pour le client: compte courant et compte epargne 
-		  
+ 
 		System.out.println(ccDAO.getCompteCourantById(client.getCompteCourant().getId()));
 		System.out.println(ceDAO.getCompteEpargneById(client.getCompteEpargne().getId()));
 		
