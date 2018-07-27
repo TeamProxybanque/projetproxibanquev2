@@ -41,10 +41,13 @@ public class CompteEpargneDAO implements ICompteEpargneDAO {
 			
 			CompteEpargne compteEpargne = new CompteEpargne();
 			
-			rs.next();
-			compteEpargne.setId(rs.getInt("id"));
-			compteEpargne.setNumeroDeCompte(rs.getString("numeroDeCompte"));
-			compteEpargne.setSolde(rs.getDouble("solde"));
+			if (rs.next()) {
+				compteEpargne.setId(rs.getInt("id"));
+				compteEpargne.setNumeroDeCompte(rs.getString("numeroDeCompte"));
+				compteEpargne.setSolde(rs.getDouble("solde"));
+			} else {
+				compteEpargne = null;
+			}
 			
 			
 			con.close();
@@ -79,11 +82,13 @@ public class CompteEpargneDAO implements ICompteEpargneDAO {
 			
 			CompteEpargne compteEpargne = new CompteEpargne();
 			
-			rs.next();
-			compteEpargne.setId(rs.getInt("id"));
-			compteEpargne.setNumeroDeCompte(rs.getString("numeroDeCompte"));
-			compteEpargne.setSolde(rs.getDouble("solde"));
-			
+			if (rs.next()) {
+				compteEpargne.setId(rs.getInt("id"));
+				compteEpargne.setNumeroDeCompte(rs.getString("numeroDeCompte"));
+				compteEpargne.setSolde(rs.getDouble("solde"));
+			} else {
+				compteEpargne = null;
+			}			
 			
 			con.close();
 			 System.out.println(compteEpargne);

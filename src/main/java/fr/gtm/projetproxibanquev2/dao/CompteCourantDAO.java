@@ -42,11 +42,13 @@ public class CompteCourantDAO implements ICompteCourantDAO {
 			
 			CompteCourant comptecourant = new CompteCourant();
 			
-			rs.next();
-			comptecourant.setId(rs.getInt("id"));
-			comptecourant.setNumeroDeCompte(rs.getString("numeroDeCompte"));
-			comptecourant.setSolde(rs.getDouble("solde"));
-			
+			if (rs.next()) {
+				comptecourant.setId(rs.getInt("id"));
+				comptecourant.setNumeroDeCompte(rs.getString("numeroDeCompte"));
+				comptecourant.setSolde(rs.getDouble("solde"));
+			} else {
+				comptecourant = null;
+			}
 			
 			con.close();
 			// System.out.println(comptecourant);
@@ -80,11 +82,13 @@ public class CompteCourantDAO implements ICompteCourantDAO {
 			
 			CompteCourant comptecourant = new CompteCourant();
 			
-			rs.next();
-			comptecourant.setId(rs.getInt("id"));
-			comptecourant.setNumeroDeCompte(rs.getString("numeroDeCompte"));
-			comptecourant.setSolde(rs.getDouble("solde"));
-			
+			if (rs.next()) {
+				comptecourant.setId(rs.getInt("id"));
+				comptecourant.setNumeroDeCompte(rs.getString("numeroDeCompte"));
+				comptecourant.setSolde(rs.getDouble("solde"));
+			} else {
+				comptecourant = null;
+			}
 			
 			con.close();
 			System.out.println(comptecourant);
