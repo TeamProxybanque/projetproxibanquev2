@@ -19,9 +19,9 @@ import fr.gtm.projetproxibanquev2.service.ClientService;
 import fr.gtm.projetproxibanquev2.service.ConnexionService;
 import fr.gtm.projetproxibanquev2.service.ConseillerService;
 /**
- * Servlet permettant la connexion d'un conseiller ou d'un gérant
+ * Servlet permettant la connexion d'un conseiller ou d'un gï¿½rant
  * 
- * @author Séverin
+ * @author Sï¿½verin
  *
  */
 @WebServlet("/servletLogIn")
@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 	}
 
 	/**
-	 * Methode traitement qui va traiter les requetes HTTP et notamment récupérer le login et mot de passe d'une page JSP pour le rediriger
+	 * Methode traitement qui va traiter les requetes HTTP et notamment rï¿½cupï¿½rer le login et mot de passe d'une page JSP pour le rediriger
 	 * @param request
 	 * @param response
 	 * @throws ServletException
@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void traitement(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		RequestDispatcher dispatcher;		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("connexionRefusee.jsp");;		
 		HttpSession maSession = request.getSession();
 		
 		// on recupere les info envoye par le formulaire
@@ -67,28 +67,21 @@ public class LoginServlet extends HttpServlet {
 		
 		// si login/password correspond a gerant
 		if ( gerant != null ) {
-			System.out.println(gerant);
 			maSession.setAttribute("gerant", gerant);
 			dispatcher = request.getRequestDispatcher("listeVirements");
 
-			// recuperer liste virement 
-
+		// si login/password correspond a conseiller
 		} else if ( conseiller != null ) {
-			System.out.println(conseiller);
 			maSession.setAttribute("conseiller", conseiller);
 			// recuperer liste client (temporaire)
 			ConseillerService conseillerService = new ConseillerService();
 			ArrayList<Client> clients = conseillerService.recupererListeClients();
-			System.out.println(clients);
+			// mettre la liste client en session
 			maSession.setAttribute("listeClients", clients);
-			// dispatcher
+			// dispatcher vers la jsp listeClient.jsp
 			dispatcher = request.getRequestDispatcher("listeClients.jsp");
-			
-		
-		// si login/password correspond a rien	
-		} else {
-			dispatcher = request.getRequestDispatcher("erreurPage.jsp");
-		}
+		}	
+		// si login/password correspond a rien, dispatcher reste Ã  connexionRefusee.jsp
 		
 		// renvoie vers une des trois directions
 		dispatcher.forward(request, response);
