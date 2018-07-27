@@ -17,6 +17,7 @@ import fr.gtm.projetproxibanquev2.domaine.Conseiller;
 import fr.gtm.projetproxibanquev2.domaine.Gerant;
 import fr.gtm.projetproxibanquev2.service.ClientService;
 import fr.gtm.projetproxibanquev2.service.ConnexionService;
+import fr.gtm.projetproxibanquev2.service.ConseillerService;
 
 @WebServlet("/servletLogIn")
 public class LoginServlet extends HttpServlet {
@@ -64,8 +65,8 @@ public class LoginServlet extends HttpServlet {
 			System.out.println(conseiller);
 			maSession.setAttribute("conseiller", conseiller);
 			// recuperer liste client (temporaire)
-			ClientService clientService = new ClientService();
-			ArrayList<Client> clients = clientService.recupererListeClient();
+			ConseillerService conseillerService = new ConseillerService();
+			ArrayList<Client> clients = conseillerService.recupererListeClients();
 			maSession.setAttribute("listeClients", clients);
 			// dispatcher
 			dispatcher = request.getRequestDispatcher("listeClients.jsp");
