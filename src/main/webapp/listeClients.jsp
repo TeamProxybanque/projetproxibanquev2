@@ -30,10 +30,10 @@
         					<tr>
           						<th scope="col">Nom</th>
           						<th scope="col">Prénom</th>
-          						<th scope="col">N° compte épargne</th>
-          						<th scope="col" colspan="2">Solde compte épargne</th>
           						<th scope="col">N° compte courant</th>
-          						<th scope="col" colspan="2">Solde compte courant</th>
+          						<th scope="col">Solde compte courant</th>
+          						<th scope="col">N° compte épargne</th>
+          						<th scope="col">Solde compte épargne</th>
           						<th scope="col">Voir plus</th>
         					</tr>
       					</thead>
@@ -50,6 +50,7 @@
     							<td><a href=detailClient.jsp>Voir plus</a></td>
   							</tr>
 						</c:forEach>
+
       				</tbody>
     			</table><br>
     			<div class="text-center">

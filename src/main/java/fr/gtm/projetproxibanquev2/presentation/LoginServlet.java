@@ -18,7 +18,12 @@ import fr.gtm.projetproxibanquev2.domaine.Gerant;
 import fr.gtm.projetproxibanquev2.service.ClientService;
 import fr.gtm.projetproxibanquev2.service.ConnexionService;
 import fr.gtm.projetproxibanquev2.service.ConseillerService;
-
+/**
+ * Servlet permettant la connexion d'un conseiller ou d'un gérant
+ * 
+ * @author Séverin
+ *
+ */
 @WebServlet("/servletLogIn")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = -7277669181055215235L;
@@ -37,6 +42,13 @@ public class LoginServlet extends HttpServlet {
 		traitement(request, response);
 	}
 
+	/**
+	 * Methode traitement qui va traiter les requetes HTTP et notamment récupérer le login et mot de passe d'une page JSP pour le rediriger
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	protected void traitement(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		RequestDispatcher dispatcher;		
@@ -67,6 +79,7 @@ public class LoginServlet extends HttpServlet {
 			// recuperer liste client (temporaire)
 			ConseillerService conseillerService = new ConseillerService();
 			ArrayList<Client> clients = conseillerService.recupererListeClients();
+			System.out.println(clients);
 			maSession.setAttribute("listeClients", clients);
 			// dispatcher
 			dispatcher = request.getRequestDispatcher("listeClients.jsp");
