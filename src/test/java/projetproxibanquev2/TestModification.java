@@ -1,5 +1,6 @@
 package projetproxibanquev2;
 
+/*
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -12,6 +13,11 @@ import java.util.Date;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+*/
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
 
 import fr.gtm.projetproxibanquev2.domaine.Client;
 import fr.gtm.projetproxibanquev2.domaine.CompteCourant;
@@ -27,14 +33,10 @@ public class TestModification {
 	CompteEpargne compteEpargne1;
 	Client client1;
 	
-	
-	@BeforeEach
-	void init() {
-		
-	}
+
 	
 	@Test
-	void testModifExist(){
+	public void testModifExist(){
 		//fail("Echec de la méthode testModifExist");
 		Conseiller conseiller1 = new Conseiller(1, "n", "p", "l", "p");
 		ConseillerService service1 = new ConseillerService ();
@@ -47,7 +49,7 @@ public class TestModification {
 	}
 	
 	@Test
-	void testModifID(){
+	public void testModifID(){
 		//fail("Echec de la méthode testModifID");
 		Conseiller conseiller1 = new Conseiller(1, "n", "p", "l", "p");
 		ConseillerService service1 = new ConseillerService ();
@@ -61,10 +63,6 @@ public class TestModification {
 	}
 	
 	
-	@Test
-	void testModifNom(){
 	
-		
-	}
 
 }
