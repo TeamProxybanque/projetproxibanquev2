@@ -2,6 +2,8 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="fr.gtm.projetproxibanquev2.dao.VirementDAO"%>
 <%@ page import="java.util.ArrayList"%>
+<%@ page import="fr.gtm.projetproxibanquev2.domaine.Virement"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,30 +32,17 @@
 								<th scope="col">Compte crédité</th>
 								<th scope="col">Montant</th>
 							</tr>
-							<tr>
-								<td>22/06/2018</td>
-								<td>11111A</td>
-								<td>67890A</td>
-								<td>450</td>
-							</tr>
-							<tr>
-								<td>10/07/2018</td>
-								<td>22222A</td>
-								<td>33333A</td>
-								<td>10000</td>
-							</tr>
-							<tr>
-								<td>17/07/2018</td>
-								<td>55555A</td>
-								<td>66666A</td>
-								<td>200</td>
-							</tr>
-							<tr>
-								<td>21/07/2018</td>
-								<td>12345A</td>
-								<td>66666A</td>
-								<td>3000</td>
-							</tr>
+						<c:forEach items="${listeVirements}" var="vir">     
+  							<tr>
+    							<td>${vir.getDateVirement()}</td>
+    							<td>${vir.getNumeroCompteDebiteur()}</td>
+    							<td>${vir.getNumeroCompteCrediteur()}</td>
+    							<td>${vir.getMontant()}</td>
+  							</tr>
+						</c:forEach>						
+						
+						
+						
 						</table>
 					</section>
 				</div>

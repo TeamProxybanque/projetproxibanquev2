@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="fr.gtm.projetproxibanquev2.domaine.Client"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -36,28 +39,17 @@
       					</thead>
       				<tbody>
       <!-- Le tableau ci-dessous dera créé dynamiquement à partir des données reçues de la bdd -->
-       					 <tr>
-          					<td>Exemple Nom 1</td>
-          					<td>Exemple Prénom 1</td>
-          					<td>18457A</td>
-          					<td>50000</td>
-          					<td>€</td>
-          					<td>45621E</td>
-          					<td >1544</td>
-          					<td>€</td>
-         					 <td><a href=detailClient.jsp>Voir plus</a></td>
-        				</tr>
-        				<tr>
-          					<td>Exemple Nom 2</td>
-          					<td>Exemple Prénom 2</td>
-          					<td>99999A</td>
-          					<td>50000</td>
-          					<td>€</td>
-          					<td>101111E</td>
-          					<td >1544</td>
-          					<td>€</td>
-          					<td><a href=detailClient.jsp>Voir plus</a></td>
-        				</tr>
+      					<c:forEach items="${listeClients}" var="client"> 
+  							<tr>
+    							<td>${client.getNom()}</td>
+    							<td>${client.getPrenom()}</td>
+    							<td>${client.getCompteCourant()}</td>
+    							<td>${client.getCompteCourant().getSolde()}</td>
+    							<td>${client.getCompteEpargne()}</td>
+    							<td>${client.getCompteEpargne().getSolde()}</td>
+    							<td><a href=detailClient.jsp>Voir plus</a></td>
+  							</tr>
+						</c:forEach>
       				</tbody>
     			</table><br>
     			<div class="text-center">
