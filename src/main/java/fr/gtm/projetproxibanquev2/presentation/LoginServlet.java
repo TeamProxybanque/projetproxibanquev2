@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
 		if ( gerant != null ) {
 			System.out.println(gerant);
 			maSession.setAttribute("gerant", gerant);
-			dispatcher = request.getRequestDispatcher("listeVirements.jsp");
+			dispatcher = request.getRequestDispatcher("listeVirements");
 		} else if ( conseiller != null ) {
 			System.out.println(conseiller);
 			maSession.setAttribute("conseiller", conseiller);
