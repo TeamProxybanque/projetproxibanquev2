@@ -52,7 +52,8 @@ public class ListeVirementServlet extends HttpServlet {
 
 		// Etape 1 : Récupération des données depuis la bdd :
 		VirementService virementService = new VirementService();
-		//ArrayList<Virement> listeVirements = virementService.recupererListeAllVirement();
+		ArrayList<Virement> listeVirements = virementService.recupererListeAllVirement();
+		//pour debug : 
 		//System.out.println("liste vir depuis servlet : " + listeVirements);
 	
 		
@@ -66,7 +67,7 @@ public class ListeVirementServlet extends HttpServlet {
 		HttpSession maSession = request.getSession();	
 		
 		//mise en session de l'utilisateur.
-		//maSession.setAttribute("listeVirements", listeVirements);
+		maSession.setAttribute("listeVirements", listeVirements);
 	
 		
 		
