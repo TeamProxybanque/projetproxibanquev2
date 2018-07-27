@@ -5,6 +5,7 @@ import fr.gtm.projetproxibanquev2.domaine.Client;
 
 import java.util.ArrayList;
 
+
 public interface IClientService {
 	
 	void creerClient(Client client);

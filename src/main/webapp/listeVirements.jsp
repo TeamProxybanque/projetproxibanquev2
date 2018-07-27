@@ -32,12 +32,14 @@
 								<th scope="col">Compte crédité</th>
 								<th scope="col">Montant</th>
 							</tr>
+					
 						<c:forEach items="${listeVirements}" var="vir">     
   							<tr>
     							<td>${vir.getDateVirement()}</td>
     							<td>${vir.getNumeroCompteDebiteur()}</td>
     							<td>${vir.getNumeroCompteCrediteur()}</td>
     							<td>${vir.getMontant()}</td>
+    							
   							</tr>
 						</c:forEach>						
 						

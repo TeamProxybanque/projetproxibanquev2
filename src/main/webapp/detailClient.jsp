@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -16,20 +17,20 @@
       		<div class="row">
       			<div class="col-lg-8 align-self-center col-lg-offset-2">
 					<div id="contenuClient">
-						<h1>Client N° -ID CLIENT-</h1>
+						<h1>Client N°<c:out value="${client.id}" /></h1>
 	
 						<section id="detailClient">
 						<form action ="modifClient.jsp">
 							<fieldset class="form-group">
 								<legend>Informations personnelles</legend>
 								<Label>Nom : </Label>
-								<Label>-Cadart-</Label><br>
+								<Label><c:out value="${client.nom}" /></Label><br>
 								<Label>Prénom : </Label>
-								<Label>-Romain-</Label><br>
+								<Label><c:out value="${client.prenom}" /></Label><br>
 								<Label>Email : </Label>
-								<Label>-cadart.romain@gmail.com-</Label><br>
+								<Label><c:out value="${client.email}" /></Label><br>
 								<Label>Adresse : </Label>
-								<Label>-50 rue des freres lumieres-</Label><br><br>	
+								<Label><c:out value="${client.adresse}" /></Label><br><br>	
 					
 								<button type="submit" class="btn btn-info">Modifier les données</button>	
 							</fieldset>

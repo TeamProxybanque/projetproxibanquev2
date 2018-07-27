@@ -62,6 +62,48 @@ public class CompteEpargneDAO implements ICompteEpargneDAO {
 		return null;
 
 	}
+	
+	public CompteEpargne getCompteEpargneByClientId(int id) {
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/proxibanquesgbd", "root", "");
+			
+			Statement stmt = con.createStatement();
+			
+			String requete = "SELECT * FROM compteepargne WHERE idClient = " + id + ";";
+			// System.out.println(requete);
+			
+			ResultSet rs = stmt.executeQuery(requete);
+			
+			CompteEpargne compteEpargne = new CompteEpargne();
+			
+			rs.next();
+			compteEpargne.setId(rs.getInt("id"));
+			compteEpargne.setNumeroDeCompte(rs.getString("numeroDeCompte"));
+			compteEpargne.setSolde(rs.getDouble("solde"));
+			
+			
+			con.close();
+			 System.out.println(compteEpargne);
+			return compteEpargne;
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		return null;
+
+	}
+	
+	
+	
+	
 
 	@Override
 	public void deleteCompteEpargne(CompteEpargne compteEpargne) {
