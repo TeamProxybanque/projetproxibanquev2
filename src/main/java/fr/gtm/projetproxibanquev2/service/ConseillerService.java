@@ -50,10 +50,14 @@ public class ConseillerService implements IConseillerService {
 	}
 	
 	public boolean mettreAJourClient(Client client) {
-		
+	// TODO	Mettre a jour le client en DB
 		boolean mettreAJour = false;
 		
 		if (client.getId() == client.getConseiller().getId()) 
+			/**
+			 * C
+			 */
+			
 		{
 			clientDAO.updateClient(client);
 			mettreAJour = true;
@@ -65,13 +69,14 @@ public class ConseillerService implements IConseillerService {
 	}
 	
 	public ArrayList<Client> recupererListeClients() {
-		
+		// TODO Tous cliens de BD 
 		
 		return clientDAO.getAllClient();
 	}
 	
 	public void listerCompteClient (Client client) {
-		// Attention! Avec ArrayList - ne pas possible. Changer UML diagramme de class
+		// TODO 2 comptes pour le client: compte courant et compte epargne 
+		  
 		System.out.println(ccDAO.getCompteCourantById(client.getCompteCourant().getId()));
 		System.out.println(ceDAO.getCompteEpargneById(client.getCompteEpargne().getId()));
 		
