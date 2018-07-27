@@ -1,6 +1,7 @@
 package fr.gtm.projetproxibanquev2.presentation;
 
 
+import fr.gtm.projetproxibanquev2.dao.ClientDAO;
 import fr.gtm.projetproxibanquev2.dao.CompteCourantDAO;
 import fr.gtm.projetproxibanquev2.dao.CompteEpargneDAO;
 import fr.gtm.projetproxibanquev2.domaine.Client;
@@ -40,7 +41,9 @@ public class TestLanceur {
 		
 		//VirementDAO virDaoTest = new VirementDAO();
 		
+	//new CompteEpargneDAO().getCompteEpargneByClientId(1);
 		
+		new ClientDAO().getAllClient();
 
 	}
 

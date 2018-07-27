@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import fr.gtm.projetproxibanquev2.domaine.Client;
+import fr.gtm.projetproxibanquev2.domaine.CompteCourant;
 
 public class ClientDAO implements IClientDAO {
 	
@@ -86,13 +87,25 @@ public class ClientDAO implements IClientDAO {
 			
 			ResultSet rs = stmt.executeQuery("SELECT * FROM client;");
 			
+			Client clientEncours = new Client();
+			
 			ArrayList<Client> listeClient = new ArrayList<Client>();
 			
 			while(rs.next())
 			{
-				listeClient.add(new Client(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"), rs.getString("adresse")));
+				//Le client prend chaque données de la réponse : 
+				clientEncours.setId(rs.getInt("id"));
+				clientEncours.setNom(rs.getString("nom"));
+				clientEncours.setPrenom(rs.getString("prenom"));
+				clientEncours.setEmail(rs.getString("email"));
+				clientEncours.setAdresse(rs.getString("adresse"));
+				clientEncours.setCompteCourant(new CompteCourantDAO().getCompteCourantByClientId(clientEncours.getId()));
+				clientEncours.setCompteEpargne(new CompteEpargneDAO().getCompteEpargneByClientId(clientEncours.getId()));				
+				
+				
+				listeClient.add(clientEncours);
 			}
-			
+			System.out.println(listeClient);
 			return listeClient;
 		}
 		catch (SQLException e)
