@@ -1,6 +1,7 @@
 package fr.gtm.projetproxibanquev2.presentation;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,8 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import fr.gtm.projetproxibanquev2.domaine.Client;
 import fr.gtm.projetproxibanquev2.domaine.Conseiller;
 import fr.gtm.projetproxibanquev2.domaine.Gerant;
+import fr.gtm.projetproxibanquev2.service.ClientService;
 import fr.gtm.projetproxibanquev2.service.ConnexionService;
 
 @WebServlet("/servletLogIn")
@@ -48,17 +51,32 @@ public class LoginServlet extends HttpServlet {
 		ConnexionService connexionService = new ConnexionService();	
 		Gerant gerant = connexionService.verifSiGerant(login, password);
 		Conseiller conseiller = connexionService.verifSiConseiller(login, password);
+		
+		// si login/password correspond a gerant
 		if ( gerant != null ) {
 			System.out.println(gerant);
 			maSession.setAttribute("gerant", gerant);
-			dispatcher = request.getRequestDispatcher("listeVirements.jsp");
+			dispatcher = request.getRequestDispatcher("listeVirements");
+			// recuperer liste virement 
+		
+		// si login/password correspond a conseiller	
 		} else if ( conseiller != null ) {
 			System.out.println(conseiller);
 			maSession.setAttribute("conseiller", conseiller);
+			// recuperer liste client (temporaire)
+			ClientService clientService = new ClientService();
+			ArrayList<Client> clients = clientService.recupererListeClient();
+			maSession.setAttribute("listeClients", clients);
+			// dispatcher
 			dispatcher = request.getRequestDispatcher("listeClients.jsp");
+			
+		
+		// si login/password correspond a rien	
 		} else {
 			dispatcher = request.getRequestDispatcher("erreurPage.jsp");
 		}
+		
+		// renvoie vers une des trois directions
 		dispatcher.forward(request, response);
 		
 		
