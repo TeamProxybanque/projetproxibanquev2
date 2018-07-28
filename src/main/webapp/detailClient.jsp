@@ -24,7 +24,7 @@
 							<fieldset class="form-group">
 								<legend>Informations personnelles</legend>
 								<Label>Nom : </Label>
-								<Label><c:out value="${client.nom}" /></Label><br>
+								<Label>${client.getNom()}</Label><br>
 								<Label>Prénom : </Label>
 								<Label><c:out value="${client.prenom}" /></Label><br>
 								<Label>Email : </Label>
@@ -48,13 +48,13 @@
 						<fieldset class="form-group">
 							<legend>Comptes</legend>
 							<Label>N° compte courant : </Label>
-							<Label>-NUM CPTE COURANT-</Label><br>
+							<Label>${client.getCompteCourant().getNumeroDeCompte()}</Label><br>
 							<Label>Solde : </Label>
-							<Label>-SOLDE CPTE COURANT-</Label><br>
+							<Label>${client.getCompteCourant().getSolde()}</Label><br>
 							<Label>N° compte epargne : </Label>
-							<Label>-NUM CPTE EPARGNE-</Label><br>
+							<Label>${client.getCompteEpargne().getNumeroDeCompte()}</Label><br>
 							<Label>Solde : </Label>
-							<Label>-SOLDE CPTE EPARGNE-</Label>	<br><br>
+							<Label>${client.getCompteEpargne().getSolde()}</Label>	<br><br>
 				
 							<button type="submit" class="btn btn-info">Faire un virement</button>
 						</fieldset>

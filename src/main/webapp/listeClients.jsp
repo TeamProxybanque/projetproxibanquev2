@@ -47,7 +47,7 @@
     							<td>${client.getCompteCourant().getSolde()}</td>
     							<td>${client.getCompteEpargne().getNumeroDeCompte()}</td>
     							<td>${client.getCompteEpargne().getSolde()}</td>
-    							<td><a href="detailClient.jsp?ip=${client.getId()}">Voir plus</a></td>
+    							<td><a href="UnClientServlet?id=${client.getId()}">Voir plus</a></td>
   							</tr>
 						</c:forEach>
 		<!-- Remarque : le code precedent fonctionne, mais il a fallu redemarrer Eclipse... -->

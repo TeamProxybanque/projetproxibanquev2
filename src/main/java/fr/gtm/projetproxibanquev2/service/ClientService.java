@@ -23,8 +23,7 @@ public class ClientService implements IClientService {
 
 	@Override
 	public Client recupererClientById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return clientDAO.getClientById(id);
 	}
 
 	@Override
