@@ -125,13 +125,13 @@ public class ClientDAO implements IClientDAO {
 			while(rs.next())
 			{
 				Client clientEncours = new Client();
-				//Le client prend chaque donn�es de la r�ponse : 
+				//Le client prend chaque donnees de la reponse : 
 				clientEncours.setId(rs.getInt("id"));
 				clientEncours.setNom(rs.getString("nom"));
 				clientEncours.setPrenom(rs.getString("prenom"));
 				clientEncours.setEmail(rs.getString("email"));
 				clientEncours.setAdresse(rs.getString("adresse"));
-				//on r�cup�re les comptes associ�s au clientEncours
+				//on r�cup�re les comptes associes au clientEncours
 				clientEncours.setCompteCourant(new CompteCourantDAO().getCompteCourantByClientId(clientEncours.getId()));
 				clientEncours.setCompteEpargne(new CompteEpargneDAO().getCompteEpargneByClientId(clientEncours.getId()));				
 				

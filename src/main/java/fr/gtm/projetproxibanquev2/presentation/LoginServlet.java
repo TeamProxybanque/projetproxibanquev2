@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +14,6 @@ import javax.servlet.http.HttpSession;
 import fr.gtm.projetproxibanquev2.domaine.Client;
 import fr.gtm.projetproxibanquev2.domaine.Conseiller;
 import fr.gtm.projetproxibanquev2.domaine.Gerant;
-import fr.gtm.projetproxibanquev2.service.ClientService;
 import fr.gtm.projetproxibanquev2.service.ConnexionService;
 import fr.gtm.projetproxibanquev2.service.ConseillerService;
 /**
@@ -81,7 +79,7 @@ public class LoginServlet extends HttpServlet {
 			// dispatcher vers la jsp listeClient.jsp
 			dispatcher = request.getRequestDispatcher("listeClients.jsp");
 		}	
-		// si login/password correspond a rien, dispatcher reste a  connexionRefusee.jsp
+		// si login/password correspond a rien, dispatcher reste aï¿½ connexionRefusee.jsp
 		
 		// renvoie vers une des trois directions
 		dispatcher.forward(request, response);
