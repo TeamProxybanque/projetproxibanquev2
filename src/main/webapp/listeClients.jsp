@@ -47,11 +47,11 @@
     							<td>${client.getCompteCourant().getSolde()}</td>
     							<td>${client.getCompteEpargne().getNumeroDeCompte()}</td>
     							<td>${client.getCompteEpargne().getSolde()}</td>
-    							<td><a href=detailClient.jsp>Voir plus</a></td>
+    							<td><a href="detailClient.jsp?ip=${client.getId()}">Voir plus</a></td>
   							</tr>
 						</c:forEach>
-		<!-- TODO:  Passer l'id du client à consulter pour pouvoir afficher ses details -->
-    	<!-- <td><a href=detailClient.jsp?id="${client.get(id)}">Voir plus</a></td>  --> 
+		<!-- Remarque : le code precedent fonctionne, mais il a fallu redemarrer Eclipse... -->
+		<!-- Remarque : le code precedent fonctionne, mais il ne faut pas mettre de JSTL en commentaire !!! -->
 
       				</tbody>
     			</table><br>

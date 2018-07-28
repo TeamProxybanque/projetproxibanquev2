@@ -19,9 +19,9 @@ import fr.gtm.projetproxibanquev2.service.ClientService;
 import fr.gtm.projetproxibanquev2.service.ConnexionService;
 import fr.gtm.projetproxibanquev2.service.ConseillerService;
 /**
- * Servlet permettant la connexion d'un conseiller ou d'un gï¿½rant
+ * Servlet permettant la connexion d'un conseiller ou d'un gerant
  * 
- * @author Sï¿½verin
+ * @author Severin
  *
  */
 @WebServlet("/servletLogIn")
@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 	}
 
 	/**
-	 * Methode traitement qui va traiter les requetes HTTP et notamment rï¿½cupï¿½rer le login et mot de passe d'une page JSP pour le rediriger
+	 * Methode traitement qui va traiter les requetes HTTP et notamment recuperer le login et mot de passe d'une page JSP pour le rediriger
 	 * @param request
 	 * @param response
 	 * @throws ServletException
@@ -81,7 +81,7 @@ public class LoginServlet extends HttpServlet {
 			// dispatcher vers la jsp listeClient.jsp
 			dispatcher = request.getRequestDispatcher("listeClients.jsp");
 		}	
-		// si login/password correspond a rien, dispatcher reste Ã  connexionRefusee.jsp
+		// si login/password correspond a rien, dispatcher reste a  connexionRefusee.jsp
 		
 		// renvoie vers une des trois directions
 		dispatcher.forward(request, response);
