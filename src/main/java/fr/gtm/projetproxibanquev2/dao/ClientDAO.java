@@ -58,8 +58,39 @@ public class ClientDAO implements IClientDAO {
 	@Override
 	public Client getClientById (int id) {
 		
-		Client client=null;
-		return client;
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/proxibanquesgbd", "root", "");
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM client WHERE id = " + id + ";");
+			System.out.println(rs);
+			Client client = new Client();
+			
+			if(rs.next())
+			{
+				client.setId(id);
+				client.setNom(rs.getString("nom"));
+				client.setPrenom(rs.getString("prenom"));
+				client.setEmail(rs.getString("email"));
+				client.setAdresse(rs.getString("adresse"));
+				//on recupere les comptes associes au clientEncours
+				client.setCompteCourant(new CompteCourantDAO().getCompteCourantByClientId(id));
+				client.setCompteEpargne(new CompteEpargneDAO().getCompteEpargneByClientId(id));	
+				System.out.println(client);
+				return client;
+			}
+
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 	/* (non-Javadoc)
@@ -94,13 +125,13 @@ public class ClientDAO implements IClientDAO {
 			while(rs.next())
 			{
 				Client clientEncours = new Client();
-				//Le client prend chaque données de la réponse : 
+				//Le client prend chaque donnï¿½es de la rï¿½ponse : 
 				clientEncours.setId(rs.getInt("id"));
 				clientEncours.setNom(rs.getString("nom"));
 				clientEncours.setPrenom(rs.getString("prenom"));
 				clientEncours.setEmail(rs.getString("email"));
 				clientEncours.setAdresse(rs.getString("adresse"));
-				//on récupère les comptes associés au clientEncours
+				//on rï¿½cupï¿½re les comptes associï¿½s au clientEncours
 				clientEncours.setCompteCourant(new CompteCourantDAO().getCompteCourantByClientId(clientEncours.getId()));
 				clientEncours.setCompteEpargne(new CompteEpargneDAO().getCompteEpargneByClientId(clientEncours.getId()));				
 				
